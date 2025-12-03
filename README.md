@@ -1,6 +1,6 @@
-#  Área de Membros - System v1.0
+#  Área de Membros para o acesso ao protocolo de tarefas
 
-Um sistema de autenticação e dashboard para área de membros, desenvolvido com foco em **UI Design Moderno (Glassmorphism)** e validação de usuários via integração com Google Sheets (SheetDB).
+Um sistema de autenticação e dashboard para área de membros, que verifica a validação de usuários via integração com Google Sheets.
 
 ![Status do Projeto](https://img.shields.io/badge/Status-Em_Desenvolvimento-yellow)
 ![Tech](https://img.shields.io/badge/Tech-HTML5_|_Tailwind_|_JS-red)
