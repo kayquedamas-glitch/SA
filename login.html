@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="h-full">
+
+<head>
+    <link rel="shortcut icon" href="assets/lOGO (3).png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <title>Entrar - Area de membros</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+ 
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #050505;
+            color: white;
+        }
+
+
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .shake-anim {
+            animation: shake 0.4s cubic-bezier(.36, .07, .19, .97) both;
+        }
+
+    </style>
+</head>
+
+<body class="h-full flex overflow-hidden">
+
+    <div
+        class="hidden md:flex w-1/2 bg-[#050505] relative items-center justify-center overflow-hidden border-r border-white/5">
+
+        <div class="absolute inset-0 bg-gradient-to-br from-[#1a0505] via-[#0a0000] to-black opacity-80"></div>
+        <div
+            class="absolute top-1/4 left-1/4 w-96 h-96 bg-[#CC0000] rounded-full blur-[180px] opacity-20 animate-pulse">
+        </div>
+
+
+        <div
+            class="glass-card relative z-10 p-10 rounded-3xl max-w-sm text-center transform hover:scale-[1.02] transition-transform duration-500">
+
+
+            <h2 class="text-3xl font-black mb-3 tracking-tight text-white">Area de membros</h2>
+            <p class="text-gray-400 text-sm leading-relaxed mb-8">
+                Acesse seu painel de controle e retome o comando da sua rotina.
+            </p>
+
+            <div
+                class="flex items-center justify-center gap-2 text-[10px] text-gray-500 uppercase tracking-widest font-bold">
+                <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span> Sistema Online
+            </div>
+        </div>
+    </div>
+
+
+    <div class="w-full md:w-1/2 bg-[#050505] bg-grid-pattern flex flex-col justify-center items-center p-8 relative">
+
+        <div class="w-full max-w-md">
+
+
+            <div class="md:hidden text-center mb-8">
+                <div class="w-12 h-12 bg-[#CC0000] rounded-xl mx-auto flex items-center justify-center shadow-red-glow">
+                    <i class="fas fa-brain text-white"></i>
+                </div>
+            </div>
+
+
+            <div class="mb-10">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-3 tracking-tight">Bem-vindo de volta</h1>
+                <p class="text-gray-500 text-sm">Digite seu e-mail de compra para acessar.</p>
+            </div>
+
+            <form id="loginForm" class="space-y-6">
+
+                <div class="space-y-2">
+                    <label class="text-xs font-bold text-gray-500 uppercase tracking-wider ml-1">E-MAIL CORPORATIVO /
+                        PESSOAL</label>
+                    <div class="relative group">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                            <i
+                                class="far fa-envelope text-gray-500 group-focus-within:text-[#CC0000] transition-colors"></i>
+                        </div>
+                        <input type="email" id="email"
+                            class="w-full bg-[#121212] border border-[#222] text-white text-sm rounded-xl py-4 pl-12 pr-4 outline-none focus:border-[#CC0000] focus:ring-1 focus:ring-[#CC0000] transition-all placeholder-gray-700 shadow-inner"
+                            placeholder="seu@email.com" required>
+                    </div>
+                </div>
+
+
+                <div id="errorMsg"
+                    class="hidden bg-red-500/10 border border-red-500/20 text-red-500 px-4 py-3 rounded-lg text-xs font-bold flex items-center gap-2 animate-pulse">
+                    <i class="fas fa-exclamation-circle"></i> <span>E-mail não encontrado na base de dados.</span>
+                </div>
+
+
+                <button type="submit" id="btnSubmit"
+                    class="w-full bg-[#CC0000] hover:bg-red-600 text-white font-bold py-4 rounded-xl transition-all transform active:scale-[0.98] shadow-lg shadow-red-900/20 group flex items-center justify-center gap-2">
+                    <span>Acessar Painel</span>
+                    <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </button>
+
+            </form>
+
+            <div class="mt-12 text-center">
+                <p class="text-gray-600 text-xs mb-4">Ainda não é membro?</p>
+                <a href="../error.html#planos"
+                    class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#333] bg-[#0A0A0A] hover:bg-[#111] hover:border-gray-500 text-white text-xs font-bold transition-all group">
+                    <i class="fas fa-rocket text-gray-500 group-hover:text-white transition-colors"></i>
+                    Criar Conta de Membro
+                </a>
+            </div>
+
+            <div class="absolute bottom-6 left-0 w-full text-center">
+                <p class="text-[10px] text-gray-800 uppercase tracking-widest font-bold">Area de membros Security System
+                    © 2025</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'https://sheetdb.io/api/v1/eplcagfbxnfje';
+        const APP_SECRET = "Area de membros_Protocol_v1_SECURE_HASH_2025_KEY";
+
+        document.getElementById('loginForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const emailInput = document.getElementById('email').value.trim().toLowerCase();
+            const btn = document.getElementById('btnSubmit');
+            const errorMsg = document.getElementById('errorMsg');
+            const form = document.getElementById('loginForm');
+            const originalText = btn.innerHTML;
+
+
+            btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> VALIDANDO...';
+            btn.classList.add('opacity-80', 'cursor-not-allowed');
+            btn.disabled = true;
+            errorMsg.classList.add('hidden');
+
+            try {
+                // Consulta API
+                const response = await fetch(`${API_URL}/search?email=${emailInput}`);
+
+                if (!response.ok) throw new Error("Erro na API");
+                const data = await response.json();
+
+                if (data.length > 0) {
+                    const nomeUsuario = data[0].nome || "Membro";
+
+                    const tokenSeguro = btoa(emailInput + APP_SECRET);
+                    const sessionData = {
+                        user: nomeUsuario,
+                        email: emailInput,
+                        token: tokenSeguro,
+                        loginDate: Date.now()
+                    };
+
+                    localStorage.setItem('Area de membros_session_v2', JSON.stringify(sessionData));
+
+
+                    btn.classList.remove('bg-[#CC0000]', 'hover:bg-red-600');
+                    btn.classList.add('bg-red-600', 'hover:bg-red-700');
+                    btn.innerHTML = '<i class="fas fa-check-circle"></i> ACESSO AUTORIZADO';
+
+                    // Redireciona
+                    setTimeout(() => {
+                        window.location.href = "index.html";
+                    }, 1000);
+
+                } else {
+                    throw new Error("Email não encontrado");
+                }
+
+            } catch (error) {
+                console.error("Erro:", error);
+
+
+                btn.innerHTML = originalText;
+                btn.classList.remove('opacity-80', 'cursor-not-allowed');
+                btn.disabled = false;
+                errorMsg.classList.remove('hidden');
+
+
+                const container = document.querySelector('.w-full.max-w-md');
+                container.classList.add('shake-anim');
+                setTimeout(() => container.classList.remove('shake-anim'), 500);
+            }
+        });
+    </script>
+</body>
+
+</html>

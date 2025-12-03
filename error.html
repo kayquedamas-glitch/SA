@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Em Construção</title>
+<script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #050505;
+            color: white;
+        }
+
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="h-full flex items-center justify-center bg-[#050505] bg-grid-pattern p-4">
+
+    <div class="glass-card w-full max-w-md p-10 rounded-3xl relative overflow-hidden text-center">
+
+        <div
+            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#CC0000] to-transparent opacity-50">
+        </div>
+
+        <div class="mb-6 relative">
+
+            <h1 class="text-6xl font-black tracking-tighter text-white mb-2 opacity-90">404</h1>
+            <h2 class="text-xl font-bold text-gray-200">Em Construção</h2>
+        </div>
+
+        <p class="text-gray-500 text-sm mb-8 leading-relaxed">
+            O módulo que você está tentando acessar ainda está sendo desenvolvido para area de membros.
+        </p>
+
+        <a href="login.html"
+            class="inline-flex items-center justify-center w-full py-3.5 px-6 bg-[#CC0000] hover:bg-red-700 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg shadow-red-900/20 group">
+            <i class="fas fa-arrow-left mr-2 group-hover:-translate-x-1 transition-transform"></i>
+            Voltar ao Início
+        </a>
+
+        <div class="mt-8 pt-6 border-t border-white/5">
+            <p class="text-[10px] text-gray-700 uppercase tracking-widest font-bold">System v1.0</p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
