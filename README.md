@@ -27,18 +27,8 @@ Este projeto é uma aplicação front-end que simula uma plataforma que possui u
 
 ## Tecnologias Utilizadas
 
-* **HTML5 & JavaScript (Vanilla):** Estrutura e lógica do cliente.
+* **HTML5 & JavaScript:** Estrutura e lógica do cliente.
 * **Tailwind CSS:** Framework de utilitários para estilização rápida (via CDN).
 * **SheetDB API:** Utilizado como "Backend" para verificar a existência do usuário em uma planilha Google Sheets.
 * **FontAwesome:** Ícones para UI.
 * **Cypress:** Framework de testes E2E (End-to-End) instalado para garantir a qualidade do código.
-
-## Estrutura de Arquivos
-
-```text
-/
-├── index.html        # Dashboard principal (Lista de tarefas)
-├── login.html        # Tela de Login com integração API
-├── error.html        # Página 404 / Em construção
-├── package.json      # Dependências do Node (Cypress)
-└── package-lock.json # Versões travadas das dependências
