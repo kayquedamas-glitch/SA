@@ -26,9 +26,7 @@ describe('Suíte de Testes: Sistema de Membros e Protocolos', () => {
     cy.url().should('include', '/login.html')
     cy.contains('h1', 'Bem-vindo de volta').should('be.visible')
   })
-  // ------------------------------------------------------------------------
-  // TESTE 1: FOCADO APENAS NA INTERFACE (UI)
-  // ------------------------------------------------------------------------
+
   it('Validação Visual - Deve exibir todos os elementos da interface de login corretamente', () => {
     cy.title().should('eq', 'Entrar - Area de membros')
 
@@ -49,9 +47,6 @@ describe('Suíte de Testes: Sistema de Membros e Protocolos', () => {
     cy.contains('p', 'Area de membros Security System © 2025').should('be.visible')
   })
 
-  // ------------------------------------------------------------------------
-  // TESTE 2: FOCADO NO ERRO (CAMINHO INFELIZ)
-  // ------------------------------------------------------------------------
   it('Login Falho - Deve bloquear acesso e exibir alerta vermelho com e-mail inexistente', () => {
     cy.intercept('GET', '**/search?email=naoexiste@teste.com').as('apiEmailInvalido')
 
@@ -69,9 +64,7 @@ describe('Suíte de Testes: Sistema de Membros e Protocolos', () => {
     cy.url().should('include', '/login.html')
   })
 
-  // ------------------------------------------------------------------------
-  // TESTE 3: FOCADO NO SUCESSO E PROTOCOLOS (CAMINHO FELIZ)
-  // ------------------------------------------------------------------------
+
   it('Login com Sucesso e Dashboard - Deve autenticar e concluir as 3 tarefas do dia', () => {
     const emailCorreto = 'kayquedamas@gmail.com'
     
@@ -103,9 +96,7 @@ describe('Suíte de Testes: Sistema de Membros e Protocolos', () => {
     })
   })
 
-  // ------------------------------------------------------------------------
-  // TESTE 4: NAVEGAÇÃO 404 (LINK CRIAR CONTA) -> NOVO
-  // ------------------------------------------------------------------------
+
 
 
 })
